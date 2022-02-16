@@ -1,0 +1,48 @@
+<h2>Buscar Recaudos</h2>
+
+<form [formGroup]="form">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Estación</mat-label>
+            <input formControlName="estacion" matInput/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="categoriaId">
+                <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Sentido</mat-label>
+            <mat-select formControlName="SentidoId">
+                <mat-option *ngFor="let sentido of sentidos" [value]="sentido.id">{{sentido.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <!--<div>
+        <mat-checkbox formControlName="entresemana">Lunes a Viernes</mat-checkbox>
+    </div>-->
+     
+    <!--<div>
+        <mat-checkbox formControlName="findesemana">Sabado y Domingo</mat-checkbox>
+    </div>
+-->
+    <div>
+        <button mat-flat-button (click)="limpiar()" color="warn">Limpiar</button>
+    </div>
+    
+     
+    <!--<div>
+        <a mat-button>
+            <mat-icon>search</mat-icon>Buscar Postres
+        </a>
+    </div>-->
+     
+    <h2>Recaudos</h2>
+    <app-listado-recaudos [recaudos]="recaudos"></app-listado-recaudos>
+<!--
+    <h2>Postres Martes</h2>
+    <app-listado-postres [postres]="postresMartes"></app-listado-postres>-->
+</form>

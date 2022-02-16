@@ -1,0 +1,29 @@
+.recaudo-contenedor
+{
+    margin-right: 2%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    max-width: 225px;
+    height: 44px;
+    font-size: 15p;
+    font-weight: bold;
+}
+
+image{
+    width: 225px;
+    height: 300px;
+}
+
+button{
+    margin-left: 1em;
+}
+
+.recaudos-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}

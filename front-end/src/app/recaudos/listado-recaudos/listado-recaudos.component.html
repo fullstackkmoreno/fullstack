@@ -1,0 +1,68 @@
+<div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+    class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="estacion">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Estación">
+      Estación
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.estacion}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="categoria">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Categoria">
+      Categoria
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="sentido">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Sentido">
+      Sentido
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.sentido}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="hora">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Hora">
+      Hora
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="valor">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Valor">
+      Valor
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]"
+showFirstLastButtons 
+aria-label="Select page of periodic elements">
+</mat-paginator>
+</div>
+<!--<app-listado-generico [listado]="recaudos">
+<ng-container contenido>
+<div class="recaudos-contenedor">
+<div *ngFor="let recaudo of recaudos; let index = index" class="recaudo-contenedor">
+    <p>
+        <a>{{recaudo.estacion}}</a>
+    </p>
+    <div>
+        <a mat-flat-button color="primary" routerLink="/galeria/editar/:id">Editar</a>
+        <button mat-flat-button color="warn" type="button">Borrar</button>
+    </div>
+</div>
+</div>
+</ng-container>
+</app-listado-generico>-->
+
